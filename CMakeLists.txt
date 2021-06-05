@@ -69,10 +69,9 @@ target_include_directories(lua_imgui PRIVATE
 )
 target_sources(lua_imgui PRIVATE
     include/lua_imgui.hpp
-    include/lua_imgui_enum.hpp
-    include/lua_imgui_ImGui.hpp
     include/lua_imgui_type.hpp
     src/lua_imgui_common.hpp
+    src/lua_imgui_enum.hpp
     src/lua_imgui_enum.cpp
     src/lua_imgui_hash.cpp
     src/lua_imgui_hash.hpp
@@ -82,6 +81,7 @@ target_sources(lua_imgui PRIVATE
     src/lua_imgui_ImGui_PlotX.inl
     src/lua_imgui_ImGui_register.inl
     src/lua_imgui_ImGui_SliderX.inl
+    src/lua_imgui_ImGui.hpp
     src/lua_imgui_ImGui.cpp
     src/lua_imgui_ImGuiTextBuffer.cpp
     src/lua_imgui_type.cpp
