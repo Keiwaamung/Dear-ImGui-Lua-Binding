@@ -37,7 +37,7 @@ void imgui_binding_lua_register_enum(lua_State* L)
     };
     
     // common
-    enum_data datas = {
+    enum_data datas1 = {
 {"ImGuiWindowFlags", {
     {"None"                     , ImGuiWindowFlags_None                     },
     {"NoTitleBar"               , ImGuiWindowFlags_NoTitleBar               },
@@ -503,7 +503,7 @@ void imgui_binding_lua_register_enum(lua_State* L)
     {"Appearing"   , ImGuiCond_Appearing   },
 }},
     };
-    regfunc(datas);
+    regfunc(datas1);
     
     // draw
     enum_data datas2 = {
@@ -543,4 +543,15 @@ void imgui_binding_lua_register_enum(lua_State* L)
 }},
     };
     regfunc(datas3);
+    
+    // viewport
+    enum_data datas4 = {
+{"ImGuiViewportFlags", {
+    {"None"             , ImGuiViewportFlags_None             },
+    {"IsPlatformWindow" , ImGuiViewportFlags_IsPlatformWindow },
+    {"IsPlatformMonitor", ImGuiViewportFlags_IsPlatformMonitor},
+    {"OwnedByApp"       , ImGuiViewportFlags_OwnedByApp       },
+}},
+    };
+    regfunc(datas4);
 }
