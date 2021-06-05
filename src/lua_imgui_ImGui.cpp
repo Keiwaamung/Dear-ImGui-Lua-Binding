@@ -1,7 +1,7 @@
-#include <cstdint>
 #include "lua_imgui_common.hpp"
 #include "lua_imgui_ImGui.hpp"
 #include "lua_imgui_type.hpp"
+#include <cstdint>
 #include "imgui.h"
 
 template<typename T>
