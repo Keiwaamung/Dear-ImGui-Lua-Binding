@@ -2,17 +2,17 @@
 #include "lua_imgui_type.hpp"
 #include "imgui.h"
 #include <vector>
-#include <string>
+#include <string_view>
 
 struct enum_name_value_pair
 {
-    std::string name;
+    std::string_view name;
     int value;
 };
 
 struct enum_name_data_pair
 {
-    std::string name;
+    std::string_view name;
     std::vector<enum_name_value_pair> data;
 };
 
@@ -21,18 +21,18 @@ using enum_data = std::vector<enum_name_data_pair>;
 void imgui_binding_lua_register_enum(lua_State* L)
 {
     auto regfunc = [&L](enum_data& datas) -> void {
-        //                                          // ? t
+        //                                                          // ? M
         for(auto& i : datas)
         {
-            lua_pushstring(L, i.name.c_str());      // ? t k
-            lua_createtable(L, 0, i.data.size());   // ? t k t
+            lua_pushlstring(L, i.name.data(), i.name.size());       // ? M k
+            lua_createtable(L, 0, i.data.size());                   // ? M k t
             for(auto& j : i.data)
             {
-                lua_pushstring(L, j.name.c_str());  // ? t k t k
-                lua_pushinteger(L, j.value);        // ? t k t k v
-                lua_settable(L, -3);                // ? t k t
+                lua_pushlstring(L, j.name.data(), j.name.size());   // ? M k t k
+                lua_pushinteger(L, j.value);                        // ? M k t k v
+                lua_settable(L, -3);                                // ? M k t
             }
-            lua_settable(L, -3);                    // ? t
+            lua_settable(L, -3);                                    // ? M
         }
     };
     
