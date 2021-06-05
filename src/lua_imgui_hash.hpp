@@ -1,0 +1,65 @@
+// Write by Xiliusha & Kuanlan
+// Minimum perfect hash function for Lua language binding.
+// This source file is generate by code generator.
+// Don't modify this file directly, please modify the generator configuration.
+
+#include <cstdint>
+
+enum class imgui_binding_lua_PropertiesHash : uint32_t
+{
+    __NOT_FOUND = 0,
+    Alpha = 1,
+    AntiAliasedFill = 2,
+    AntiAliasedLines = 3,
+    AntiAliasedLinesUseTex = 4,
+    ButtonTextAlign = 5,
+    CellPadding = 6,
+    ChildBorderSize = 7,
+    ChildRounding = 8,
+    CircleTessellationMaxError = 9,
+    ColorButtonPosition = 10,
+    Colors = 11,
+    ColumnsMinSpacing = 12,
+    CurveTessellationTol = 13,
+    DisplaySafeAreaPadding = 14,
+    DisplayWindowPadding = 15,
+    FrameBorderSize = 16,
+    FramePadding = 17,
+    FrameRounding = 18,
+    GrabMinSize = 19,
+    GrabRounding = 20,
+    IndentSpacing = 21,
+    ItemInnerSpacing = 22,
+    ItemSpacing = 23,
+    LogSliderDeadzone = 24,
+    MouseCursorScale = 25,
+    PopupBorderSize = 26,
+    PopupRounding = 27,
+    ScaleAllSizes = 28,
+    ScrollbarRounding = 29,
+    ScrollbarSize = 30,
+    SelectableTextAlign = 31,
+    TabBorderSize = 32,
+    TabMinWidthForCloseButton = 33,
+    TabRounding = 34,
+    TouchExtraPadding = 35,
+    WindowBorderSize = 36,
+    WindowMenuButtonPosition = 37,
+    WindowMinSize = 38,
+    WindowPadding = 39,
+    WindowRounding = 40,
+    WindowTitleAlign = 41,
+    append = 42,
+    c_str = 43,
+    clear = 44,
+    empty = 45,
+    reserve = 46,
+    size = 47,
+    w = 48,
+    x = 49,
+    y = 50,
+    z = 51,
+    __FORCE_DWORD = 0xFFFFFFFF,
+};
+
+imgui_binding_lua_PropertiesHash imgui_binding_lua_ComputePropertiesHash(const char* key);
