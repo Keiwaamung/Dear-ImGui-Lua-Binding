@@ -1430,7 +1430,7 @@ static int lib_Combo(lua_State* L)
         {
             if (argc <= 4)
             {
-                const int items_count = (argc < 4) ? _imgui_binding_lua_len(L, 3) : (int)luaL_checkinteger(L, 4);
+                const int items_count = (argc < 4) ? _luaL_len(L, 3) : (int)luaL_checkinteger(L, 4);
                 char_array items(items_count);
                 for (int i = 1; i <= items_count; i += 1)
                 {
@@ -1833,7 +1833,7 @@ static int lib_ListBox(lua_State* L)
     }
     else
     {
-        const int items_count = (argc >= 4) ? (int)luaL_checkinteger(L, 4) : _imgui_binding_lua_len(L, 3);
+        const int items_count = (argc >= 4) ? (int)luaL_checkinteger(L, 4) : _luaL_len(L, 3);
         char_array items(items_count);
         for (int i = 0; i < items_count; i += 1)
         {
@@ -3112,7 +3112,7 @@ static int lib_LoadIniSettingsFromMemory(lua_State* L)
     }
     else
     {
-        const size_t size = _imgui_binding_lua_len_size_t(L, 1);
+        const size_t size = _luaL_szlen(L, 1);
         ImGui::LoadIniSettingsFromMemory(data, size);
     }
     return 0;

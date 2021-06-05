@@ -7,7 +7,7 @@
 
 int luaopen_imgui(lua_State* L)
 {
-    _imgui_binding_lua_new_library(L, "imgui");
+    _luaL_reglib(L, "imgui");
     
     //                                      // ? m
     lua_pushstring(L, "IMGUI_VERSION");     // ? m k

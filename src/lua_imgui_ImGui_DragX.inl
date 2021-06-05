@@ -781,7 +781,7 @@ static int lib_DragScalarN(lua_State* L)
     bool ret = false;
     if (data_type == ImGuiDataType_Integer)
     {
-        const int components = (argc >= 4) ? (int)luaL_checkinteger(L, 4) : _imgui_binding_lua_len(L, 3);
+        const int components = (argc >= 4) ? (int)luaL_checkinteger(L, 4) : _luaL_len(L, 3);
         integer_array data(components);
         for (int i = 0; i < components; i += 1)
         {
@@ -844,7 +844,7 @@ static int lib_DragScalarN(lua_State* L)
     }
     else if (data_type == ImGuiDataType_Number)
     {
-        const int components = (argc >= 4) ? (int)luaL_checkinteger(L, 4) : _imgui_binding_lua_len(L, 3);
+        const int components = (argc >= 4) ? (int)luaL_checkinteger(L, 4) : _luaL_len(L, 3);
         number_array data(components);
         for (int i = 0; i < components; i += 1)
         {
