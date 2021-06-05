@@ -1,3 +1,4 @@
+#include "lua_imgui_common.hpp"
 #include "lua_imgui_type.hpp"
 #include "lua_imgui_hash.hpp"
 
@@ -161,7 +162,7 @@ void imgui_binding_lua_register_ImGuiTextBuffer(lua_State* L)
     };
     
     luaL_newmetatable(L, lua_class_imgui_ImGuiTextBuffer);
-    luaL_setfuncs(L, mt_lib, 0);
+    _luaL_setfuncs(L, mt_lib);
     lua_pop(L, 1);
     
     const luaL_Reg cls_lib[] = {
@@ -169,7 +170,7 @@ void imgui_binding_lua_register_ImGuiTextBuffer(lua_State* L)
         {NULL, NULL},
     };
     
-    luaL_setfuncs(L, cls_lib, 0);
+    _luaL_setfuncs(L, cls_lib);
 }
 ImGuiTextBuffer* imgui_binding_lua_new_ImGuiTextBuffer(lua_State* L)
 {

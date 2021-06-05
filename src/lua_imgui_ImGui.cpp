@@ -3167,9 +3167,9 @@ static /* XXXX */ int lib_MemFree(lua_State* L)
 void imgui_binding_lua_register_ImGui(lua_State* L)
 {
 #include "lua_imgui_ImGui_register.inl"
-    //                                      // ? m
-    lua_pushstring(L, "ImGui");             // ? m k
-    lua_createtable(L, 0, lib_func);        // ? m k t
-    luaL_setfuncs(L, lib_fun, 0);           // ? m k t
-    lua_settable(L, -3);                    // ? m
+    //                                  // ? M
+    lua_pushstring(L, "ImGui");         // ? M k
+    lua_createtable(L, 0, lib_func);    // ? M k t
+    _luaL_setfuncs(L, lib_fun);         // ? M k t
+    lua_settable(L, -3);                // ? M
 }

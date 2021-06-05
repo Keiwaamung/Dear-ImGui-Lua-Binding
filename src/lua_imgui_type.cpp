@@ -1,3 +1,4 @@
+#include "lua_imgui_common.hpp"
 #include "lua_imgui_type.hpp"
 #include "lua_imgui_hash.hpp"
 
@@ -92,7 +93,7 @@ void imgui_binding_lua_register_ImVec2(lua_State* L)
     };
     
     luaL_newmetatable(L, lua_class_imgui_ImVec2);
-    luaL_setfuncs(L, mt_lib, 0);
+    _luaL_setfuncs(L, mt_lib);
     lua_pop(L, 1);
     
     const luaL_Reg cls_lib[] = {
@@ -100,7 +101,7 @@ void imgui_binding_lua_register_ImVec2(lua_State* L)
         {NULL, NULL},
     };
     
-    luaL_setfuncs(L, cls_lib, 0);
+    _luaL_setfuncs(L, cls_lib);
 }
 ImVec2* imgui_binding_lua_new_ImVec2(lua_State* L)
 {
@@ -233,7 +234,7 @@ void imgui_binding_lua_register_ImVec4(lua_State* L)
     };
     
     luaL_newmetatable(L, lua_class_imgui_ImVec4);
-    luaL_setfuncs(L, mt_lib, 0);
+    _luaL_setfuncs(L, mt_lib);
     lua_pop(L, 1);
     
     const luaL_Reg cls_lib[] = {
@@ -241,7 +242,7 @@ void imgui_binding_lua_register_ImVec4(lua_State* L)
         {NULL, NULL},
     };
     
-    luaL_setfuncs(L, cls_lib, 0);
+    _luaL_setfuncs(L, cls_lib);
 }
 ImVec4* imgui_binding_lua_new_ImVec4(lua_State* L)
 {
@@ -340,7 +341,7 @@ void imgui_binding_lua_register_array_ImVec4(lua_State* L)
     };
     
     luaL_newmetatable(L, imgui_binding_lua_class_array_ImVec4);
-    luaL_setfuncs(L, mt_lib, 0);
+    _luaL_setfuncs(L, mt_lib);
     lua_pop(L, 1);
     
     const luaL_Reg cls_lib[] = {
@@ -348,7 +349,7 @@ void imgui_binding_lua_register_array_ImVec4(lua_State* L)
         {NULL, NULL},
     };
     
-    // luaL_setfuncs(L, cls_lib, 0);
+    // _luaL_setfuncs(L, cls_lib);
 }
 ImVec4* imgui_binding_lua_new_array_ImVec4(lua_State* L, size_t n)
 {
@@ -688,7 +689,7 @@ void imgui_binding_lua_register_ImGuiStyle(lua_State* L)
     };
     
     luaL_newmetatable(L, lua_class_imgui_ImGuiStyle);
-    luaL_setfuncs(L, mt_lib, 0);
+    _luaL_setfuncs(L, mt_lib);
     lua_pop(L, 1);
     
     const luaL_Reg cls_lib[] = {
@@ -696,7 +697,7 @@ void imgui_binding_lua_register_ImGuiStyle(lua_State* L)
         {NULL, NULL},
     };
     
-    luaL_setfuncs(L, cls_lib, 0);
+    _luaL_setfuncs(L, cls_lib);
     
     imgui_binding_lua_register_array_ImVec4(L); // TODO: fuck it
 }
