@@ -49,7 +49,7 @@ void imgui_binding_lua_register_ImVec2(lua_State* L)
         };
         static int __gc(lua_State* L)
         {
-            __ImVec2* p = (__ImVec2*)luaL_checkudata(L, 1, imgui_binding_lua_class_ImVec2);
+            __ImVec2* p = (__ImVec2*)luaL_checkudata(L, 1, lua_class_imgui_ImVec2);
             if (!p->reft)
             {
                 delete p->data;
@@ -60,7 +60,7 @@ void imgui_binding_lua_register_ImVec2(lua_State* L)
         };
         static int __tostring(lua_State* L)
         {
-            lua_pushstring(L, imgui_binding_lua_class_ImVec2);
+            lua_pushstring(L, lua_class_imgui_ImVec2);
             return 1;
         };
         
@@ -91,7 +91,7 @@ void imgui_binding_lua_register_ImVec2(lua_State* L)
         {NULL, NULL},
     };
     
-    luaL_newmetatable(L, imgui_binding_lua_class_ImVec2);
+    luaL_newmetatable(L, lua_class_imgui_ImVec2);
     luaL_setfuncs(L, mt_lib, 0);
     lua_pop(L, 1);
     
@@ -107,7 +107,7 @@ ImVec2* imgui_binding_lua_new_ImVec2(lua_State* L)
     __ImVec2* p = (__ImVec2*)lua_newuserdata(L, sizeof(__ImVec2));
     p->data = new ImVec2;
     p->reft = false;
-    luaL_getmetatable(L, imgui_binding_lua_class_ImVec2);
+    luaL_getmetatable(L, lua_class_imgui_ImVec2);
     lua_setmetatable(L, -2);
     return p->data;
 }
@@ -116,13 +116,13 @@ ImVec2* imgui_binding_lua_ref_ImVec2(lua_State* L, ImVec2* v)
     __ImVec2* p = (__ImVec2*)lua_newuserdata(L, sizeof(__ImVec2));
     p->data = v;
     p->reft = true;
-    luaL_getmetatable(L, imgui_binding_lua_class_ImVec2);
+    luaL_getmetatable(L, lua_class_imgui_ImVec2);
     lua_setmetatable(L, -2);
     return p->data;
 }
 ImVec2* imgui_binding_lua_to_ImVec2(lua_State* L, int idx)
 {
-    __ImVec2* p = (__ImVec2*)luaL_checkudata(L, idx, imgui_binding_lua_class_ImVec2);
+    __ImVec2* p = (__ImVec2*)luaL_checkudata(L, idx, lua_class_imgui_ImVec2);
     return p->data;
 }
 
@@ -186,7 +186,7 @@ void imgui_binding_lua_register_ImVec4(lua_State* L)
         };
         static int __gc(lua_State* L)
         {
-            __ImVec4* p = (__ImVec4*)luaL_checkudata(L, 1, imgui_binding_lua_class_ImVec4);
+            __ImVec4* p = (__ImVec4*)luaL_checkudata(L, 1, lua_class_imgui_ImVec4);
             if (!p->reft)
             {
                 delete p->data;
@@ -197,7 +197,7 @@ void imgui_binding_lua_register_ImVec4(lua_State* L)
         };
         static int __tostring(lua_State* L)
         {
-            lua_pushstring(L, imgui_binding_lua_class_ImVec4);
+            lua_pushstring(L, lua_class_imgui_ImVec4);
             return 1;
         };
         
@@ -232,7 +232,7 @@ void imgui_binding_lua_register_ImVec4(lua_State* L)
         {NULL, NULL},
     };
     
-    luaL_newmetatable(L, imgui_binding_lua_class_ImVec4);
+    luaL_newmetatable(L, lua_class_imgui_ImVec4);
     luaL_setfuncs(L, mt_lib, 0);
     lua_pop(L, 1);
     
@@ -248,7 +248,7 @@ ImVec4* imgui_binding_lua_new_ImVec4(lua_State* L)
     __ImVec4* p = (__ImVec4*)lua_newuserdata(L, sizeof(__ImVec4));
     p->data = new ImVec4;
     p->reft = false;
-    luaL_getmetatable(L, imgui_binding_lua_class_ImVec4);
+    luaL_getmetatable(L, lua_class_imgui_ImVec4);
     lua_setmetatable(L, -2);
     return p->data;
 }
@@ -257,13 +257,13 @@ ImVec4* imgui_binding_lua_ref_ImVec4(lua_State* L, ImVec4* v)
     __ImVec4* p = (__ImVec4*)lua_newuserdata(L, sizeof(__ImVec4));
     p->data = v;
     p->reft = true;
-    luaL_getmetatable(L, imgui_binding_lua_class_ImVec4);
+    luaL_getmetatable(L, lua_class_imgui_ImVec4);
     lua_setmetatable(L, -2);
     return p->data;
 }
 ImVec4* imgui_binding_lua_to_ImVec4(lua_State* L, int idx)
 {
-    __ImVec4* p = (__ImVec4*)luaL_checkudata(L, idx, imgui_binding_lua_class_ImVec4);
+    __ImVec4* p = (__ImVec4*)luaL_checkudata(L, idx, lua_class_imgui_ImVec4);
     return p->data;
 }
 
@@ -657,7 +657,7 @@ void imgui_binding_lua_register_ImGuiStyle(lua_State* L)
         };
         static int __gc(lua_State* L)
         {
-            __ImVec4* p = (__ImVec4*)luaL_checkudata(L, 1, imgui_binding_lua_class_ImGuiStyle);
+            __ImVec4* p = (__ImVec4*)luaL_checkudata(L, 1, lua_class_imgui_ImGuiStyle);
             if (!p->reft)
             {
                 delete p->data;
@@ -668,7 +668,7 @@ void imgui_binding_lua_register_ImGuiStyle(lua_State* L)
         };
         static int __tostring(lua_State* L)
         {
-            lua_pushstring(L, imgui_binding_lua_class_ImGuiStyle);
+            lua_pushstring(L, lua_class_imgui_ImGuiStyle);
             return 1;
         };
         
@@ -687,7 +687,7 @@ void imgui_binding_lua_register_ImGuiStyle(lua_State* L)
         {NULL, NULL},
     };
     
-    luaL_newmetatable(L, imgui_binding_lua_class_ImGuiStyle);
+    luaL_newmetatable(L, lua_class_imgui_ImGuiStyle);
     luaL_setfuncs(L, mt_lib, 0);
     lua_pop(L, 1);
     
@@ -705,7 +705,7 @@ ImGuiStyle* imgui_binding_lua_new_ImGuiStyle(lua_State* L)
     __ImGuiStyle* p = (__ImGuiStyle*)lua_newuserdata(L, sizeof(__ImGuiStyle));
     p->data = new ImGuiStyle;
     p->reft = false;
-    luaL_getmetatable(L, imgui_binding_lua_class_ImGuiStyle);
+    luaL_getmetatable(L, lua_class_imgui_ImGuiStyle);
     lua_setmetatable(L, -2);
     return p->data;
 }
@@ -714,12 +714,12 @@ ImGuiStyle* imgui_binding_lua_ref_ImGuiStyle(lua_State* L, ImGuiStyle* v)
     __ImGuiStyle* p = (__ImGuiStyle*)lua_newuserdata(L, sizeof(__ImGuiStyle));
     p->data = v;
     p->reft = true;
-    luaL_getmetatable(L, imgui_binding_lua_class_ImGuiStyle);
+    luaL_getmetatable(L, lua_class_imgui_ImGuiStyle);
     lua_setmetatable(L, -2);
     return p->data;
 }
 ImGuiStyle* imgui_binding_lua_to_ImGuiStyle(lua_State* L, int idx)
 {
-    __ImGuiStyle* p = (__ImGuiStyle*)luaL_checkudata(L, idx, imgui_binding_lua_class_ImGuiStyle);
+    __ImGuiStyle* p = (__ImGuiStyle*)luaL_checkudata(L, idx, lua_class_imgui_ImGuiStyle);
     return p->data;
 }
