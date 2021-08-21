@@ -75,6 +75,8 @@ target_sources(lua_imgui PRIVATE
     src/lua_imgui_enum.cpp
     src/lua_imgui_hash.cpp
     src/lua_imgui_hash.hpp
+    src/lua_imgui_map.hpp
+    src/lua_imgui_map.cpp
     src/lua_imgui_ImGui_ColorX.inl
     src/lua_imgui_ImGui_DragX.inl
     src/lua_imgui_ImGui_InputX.inl
