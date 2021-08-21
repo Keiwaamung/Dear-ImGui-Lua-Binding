@@ -405,6 +405,9 @@ void imgui_binding_lua_register_ImGuiStyle(lua_State* L)
             case E::Alpha:
                 lua_pushnumber(L, (lua_Number)data->Alpha);
                 return 1;
+            case E::DisabledAlpha:
+                lua_pushnumber(L, (lua_Number)data->DisabledAlpha);
+                return 1;
             case E::WindowPadding:
                 imgui_binding_lua_ref_ImVec2(L, &data->WindowPadding);
                 return 1;
@@ -535,6 +538,9 @@ void imgui_binding_lua_register_ImGuiStyle(lua_State* L)
             {
             case E::Alpha:
                 data->Alpha = (float)luaL_checknumber(L, 3);
+                break;
+            case E::DisabledAlpha:
+                data->DisabledAlpha = (float)luaL_checknumber(L, 3);
                 break;
             case E::WindowPadding:
                 data->WindowPadding = *imgui_binding_lua_to_ImVec2(L, 3);
