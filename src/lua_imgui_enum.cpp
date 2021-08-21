@@ -24,11 +24,11 @@ void imgui_binding_lua_register_enum(lua_State* L)
         //                                                          // ? M
         for(auto& i : datas)
         {
-            lua_pushlstring(L, i.name.data(), i.name.size());       // ? M k
+            lua_pushlstring(L, i.name.data(), i.name.length());     // ? M k
             lua_createtable(L, 0, i.data.size());                   // ? M k t
             for(auto& j : i.data)
             {
-                lua_pushlstring(L, j.name.data(), j.name.size());   // ? M k t k
+                lua_pushlstring(L, j.name.data(), j.name.length()); // ? M k t k
                 lua_pushinteger(L, j.value);                        // ? M k t k v
                 lua_settable(L, -3);                                // ? M k t
             }
